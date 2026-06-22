@@ -57,6 +57,16 @@ function initializeSlider() {
     let cardsPerView = getCardsPerView();
     let maxIndex = Math.max(0, totalCards - cardsPerView);
 
+    // Restore slider position from sessionStorage
+    const lastProjectIndex = sessionStorage.getItem('lastProjectIndex');
+    if (lastProjectIndex !== null) {
+        const restoredIndex = Math.max(0, Math.min(parseInt(lastProjectIndex, 10), maxIndex));
+        if (!isNaN(restoredIndex)) {
+            currentIndex = restoredIndex;
+        }
+        sessionStorage.removeItem('lastProjectIndex');
+    }
+
     function updateSlider() {
         let translateX;
 
@@ -173,6 +183,16 @@ function initializeSlider() {
         });
 
         window.addEventListener('resize', handleResize);
+
+        // Capture clicked card index when "View Project" link is clicked
+        Array.from(slider.children).forEach((card, index) => {
+            const viewLink = card.querySelector('a[href^="project-"]');
+            if (viewLink) {
+                viewLink.addEventListener('click', () => {
+                    sessionStorage.setItem('lastProjectIndex', index);
+                });
+            }
+        });
     }
 
     addEventListeners();
