@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TechUp – Project Details</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { primary: '#415E72' } } } }
+    tailwind.config = { theme: { extend: { colors: { primary: '#415E72' }, fontFamily: { sans: ['General Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'] } } } }
   </script>
   <link rel="icon" href="Images/PFP.JPG" type="image/jpeg">
   <link rel="apple-touch-icon" href="Images/PFP.JPG">
@@ -21,8 +22,8 @@
     <p class="text-gray-700 dark:text-gray-200 mb-8">A platform Empowering Young Africans with Tech Skills.</p>
 
     <div class="grid md:grid-cols-2 gap-6 mb-10">
-      <img src="Images/techupFeat1.png" class="w-full h-72 object-cover rounded-xl" alt="TechUp feature 1" />
-      <img src="Images/techupFeat2.png" class="w-full h-72 object-cover rounded-xl" alt="TechUp feature 2" />
+      <img src="Images/techupFeat1.png" class="w-full h-72 object-cover rounded-xl border-4 border-primary/20 shadow-lg" alt="TechUp feature 1" />
+      <img src="Images/techupFeat2.png" class="w-full h-72 object-cover rounded-xl border-4 border-primary/20 shadow-lg" alt="TechUp feature 2" />
     </div>
 
     <section class="mb-10">
@@ -39,7 +40,7 @@
       </div>
     </section>
 
-    <a href="#" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-white hover:bg-primary/90">Visit Live ↗</a>
+    <a href="https://techupofficial.com/" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-white hover:bg-primary/90">Visit Live ↗</a>
   </main>
 </body>
 </html>
